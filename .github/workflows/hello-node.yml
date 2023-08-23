@@ -1,0 +1,14 @@
+name: hello-node
+run-name: ${{ github.actor }} is saying hello from node to GitHub Actions
+on: [push]
+jobs:
+  hello-on-push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+      - run: node -v
+      - name: logging hello world step
+        run: node hello.js
