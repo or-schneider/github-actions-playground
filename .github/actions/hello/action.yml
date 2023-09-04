@@ -1,0 +1,8 @@
+name: hello
+description: Saying hello to GitHub Actions
+runs:
+  using: "composite"
+  steps:
+    - id: hello-message-step
+      run: echo "Hello"
+      shell: bash
