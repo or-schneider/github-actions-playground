@@ -1,0 +1,12 @@
+name: fail-on-pr
+run-name: ${{ github.actor }} is saying hello to GitHub Actions
+on: [pull_request]
+jobs:
+  hello-on-push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: "Fail by design"
+        run: exit 1
+      - name: Failed to fail
+        run: echo Should not get here
